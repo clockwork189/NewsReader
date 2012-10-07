@@ -12,18 +12,20 @@ body{
 }
 
 .feedholder {
-	font-size: 14px;
+	font-size: 13px;
 	text-align: left;
 	padding: 10px;
 	height: 190px;
 	overflow-y: scroll;
 	overflow-x: hidden;
 	list-style: circle;
-	font-family: 'Galdeano', sans-serif;
+	margin: 0px;
+	font-family:'Helvetica Neue', Arial, sans-serif;
+	list-style-position: inside;
 }
 
 .feedholder li {
-	padding: 5px;
+	padding: 4px;
 }
 
 .feedholder li:hover {

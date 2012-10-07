@@ -83,6 +83,42 @@
 		          		}
 		        	}
 		      	});
+
+		      	var arstechnica = new google.feeds.Feed("http://feeds.arstechnica.com/arstechnica/index");
+		      	arstechnica.setNumEntries(20);
+		      	arstechnica.load(function(result) {
+		        	if (!result.error) {
+		          		for (var i = 0; i < result.feed.entries.length; i++) {
+		            		var entry = result.feed.entries[i];
+		            		var link_href = "<li><a href='" + entry.link + "' target='_blank' class='feeditem'>" + entry.title + "</a></li>";
+		            		$("#arstechnica .feedholder").append(link_href);
+		          		}
+		        	}
+		      	});
+
+		      	var smashing = new google.feeds.Feed("http://rss1.smashingmagazine.com/feed/");
+		      	smashing.setNumEntries(20);
+		      	smashing.load(function(result) {
+		        	if (!result.error) {
+		          		for (var i = 0; i < result.feed.entries.length; i++) {
+		            		var entry = result.feed.entries[i];
+		            		var link_href = "<li><a href='" + entry.link + "' target='_blank' class='feeditem'>" + entry.title + "</a></li>";
+		            		$("#smashing .feedholder").append(link_href);
+		          		}
+		        	}
+		      	});
+
+		      	var mashable = new google.feeds.Feed("http://feeds.mashable.com/Mashable");
+		      	mashable.setNumEntries(20);
+		      	mashable.load(function(result) {
+		        	if (!result.error) {
+		          		for (var i = 0; i < result.feed.entries.length; i++) {
+		            		var entry = result.feed.entries[i];
+		            		var link_href = "<li><a href='" + entry.link + "' target='_blank' class='feeditem'>" + entry.title + "</a></li>";
+		            		$("#mashable .feedholder").append(link_href);
+		          		}
+		        	}
+		      	});
 		    }
 		    google.setOnLoadCallback(initialize);
     </script>
@@ -122,6 +158,23 @@
 						</div>
 						<div class="span4 shadow feedcontainer" id="engadget">
 						 	<h5><a href="http://www.engadget.com/" target="_blank"><img src="images/engadget.png" style="width:18px; height:18px; margin-right:5px; margin-left:-10px;"/>Engadget</a></h5>
+						 	<ul class="feedholder">
+						 	</ul>
+						</div>
+					</div>
+					<div class="row-fluid" style="margin-top:30px;">
+						<div class="span4 shadow feedcontainer" id="mashable">
+						 	<h5><a href="http://mashable.com/" target="_blank"><img src="images/mashable-m.png" style="width:18px; height:18px; margin-right:5px; margin-left:-10px;"/>Mashable</a></h5>
+						 	<ul class="feedholder">
+						 	</ul>
+						</div>
+						<div class="span4 shadow feedcontainer" id="smashing">
+						 	<h5><a href="http://www.smashingmagazine.com/" target="_blank"><img src="images/smashing.png" style="width:18px; height:18px; margin-right:5px; margin-left:-10px;"/>Smashing Magazine</a></h5>
+						 	<ul class="feedholder">
+						 	</ul>
+						</div>
+						<div class="span4 shadow feedcontainer" id="arstechnica">
+						 	<h5><a href="http://arstechnica.com/" target="_blank"><img src="images/128.png" style="width:18px; height:18px; margin-right:5px; margin-left:-10px;"/>Arstechnica</a></h5>
 						 	<ul class="feedholder">
 						 	</ul>
 						</div>
