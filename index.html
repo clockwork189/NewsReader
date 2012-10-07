@@ -5,23 +5,128 @@
 		<title>News Reader</title>
 		<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css" />
 		<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap-responsive.min.css" />
+		<link href='http://fonts.googleapis.com/css?family=Galdeano' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" type="text/css" href="css/main.css" />
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 		<script src="bootstrap/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+		<script type="text/javascript">
+		    google.load("feeds", "1");
+		    function initialize() {
+		      	var techcrunch = new google.feeds.Feed("http://feeds.feedburner.com/TechCrunch/");
+		      	techcrunch.setNumEntries(20);
+		      	techcrunch.load(function(result) {
+		        	if (!result.error) {
+		          		for (var i = 0; i < result.feed.entries.length; i++) {
+		            		var entry = result.feed.entries[i];
+		            		var link_href = "<li><a href='" + entry.link + "' target='_blank' class='feeditem'>" + entry.title + "</a></li>";
+		            		$("#techcrunch .feedholder").append(link_href);
+		          		}
+		        	}
+		      	});
+
+		      	var hackernews = new google.feeds.Feed("http://news.ycombinator.com/rss");
+		      	hackernews.setNumEntries(20);
+		      	hackernews.load(function(result) {
+		        	if (!result.error) {
+		          		for (var i = 0; i < result.feed.entries.length; i++) {
+		            		var entry = result.feed.entries[i];
+		            		var link_href = "<li><a href='" + entry.link + "' target='_blank' class='feeditem'>" + entry.title + "</a></li>";
+		            		$("#hackernews .feedholder").append(link_href);
+		          		}
+		        	}
+		      	});
+
+		      	var lifehacker = new google.feeds.Feed("http://feeds.gawker.com/lifehacker/full");
+		      	lifehacker.setNumEntries(20);
+		      	lifehacker.load(function(result) {
+		        	if (!result.error) {
+		          		for (var i = 0; i < result.feed.entries.length; i++) {
+		            		var entry = result.feed.entries[i];
+		            		var link_href = "<li><a href='" + entry.link + "' target='_blank' class='feeditem'>" + entry.title + "</a></li>";
+		            		$("#lifehacker .feedholder").append(link_href);
+		          		}
+		        	}
+		      	});
+		      	var gizmodo = new google.feeds.Feed("http://feeds.gawker.com/Gizmodo/full");
+		      	gizmodo.setNumEntries(20);
+		      	gizmodo.load(function(result) {
+		        	if (!result.error) {
+		          		for (var i = 0; i < result.feed.entries.length; i++) {
+		            		var entry = result.feed.entries[i];
+		            		var link_href = "<li><a href='" + entry.link + "' target='_blank' class='feeditem'>" + entry.title + "</a></li>";
+		            		$("#gizmodo .feedholder").append(link_href);
+		          		}
+		        	}
+		      	});
+
+		      	var wired = new google.feeds.Feed("http://feeds.wired.com/wired/index");
+		      	wired.setNumEntries(20);
+		      	wired.load(function(result) {
+		        	if (!result.error) {
+		          		for (var i = 0; i < result.feed.entries.length; i++) {
+		            		var entry = result.feed.entries[i];
+		            		var link_href = "<li><a href='" + entry.link + "' target='_blank' class='feeditem'>" + entry.title + "</a></li>";
+		            		$("#wired .feedholder").append(link_href);
+		          		}
+		        	}
+		      	});
+
+		      	var engadget = new google.feeds.Feed("http://www.engadget.com/rss.xml");
+		      	engadget.setNumEntries(20);
+		      	engadget.load(function(result) {
+		        	if (!result.error) {
+		          		for (var i = 0; i < result.feed.entries.length; i++) {
+		            		var entry = result.feed.entries[i];
+		            		var link_href = "<li><a href='" + entry.link + "' target='_blank' class='feeditem'>" + entry.title + "</a></li>";
+		            		$("#engadget .feedholder").append(link_href);
+		          		}
+		        	}
+		      	});
+		    }
+		    google.setOnLoadCallback(initialize);
+    </script>
 	</head>
 	<body>
 		<div class="container-fluid">
 			<div class="row-fluid">
-				<h1>Techy News Reader</h1>
-				
-				<div class="span3">
-				 	
-				</div>
-				<div class="span3">
-				 	
-				</div>
-				<div class="span3">
-				 	
+				<div class="span12">
+					<h1>Tech News Reader</h1>
+					<div class="row-fluid">
+						<div class="span4 shadow feedcontainer" id="hackernews">
+						 	<h5><a href="http://news.ycombinator.com/" target="_blank"><img src="images/y18.gif" style="margin-right:5px; margin-left:-10px;"/>Hacker News</a></h5>
+						 	<ul class="feedholder">
+						 	</ul>
+						</div>
+						<div class="span4 shadow feedcontainer" id="techcrunch"> 
+						 	<h5><a href="http://techcrunch.com/" target="_blank"><img src="images/techcrunch.jpg" style="width:18px; height:18px; margin-right:5px; margin-left:-10px;"/>Techcrunch</a></h5>
+						 	<ul class="feedholder">
+						 	</ul>
+						</div>
+						<div class="span4 shadow feedcontainer" id="lifehacker">
+						 	<h5><a href="http://lifehacker.com/" target="_blank"><img src="images/lifehacker.png" style="width:18px; height:18px; margin-right:5px; margin-left:-10px;"/>Life Hacker</a></h5>
+						 	<ul class="feedholder">
+						 	</ul>
+						</div>
+					</div>
+					<div class="row-fluid" style="margin-top:30px;">
+						<div class="span4 shadow feedcontainer" id="wired">
+						 	<h5><a href="http://www.wired.com/" target="_blank"><img src="images/wired.jpg" style="width:18px; height:18px; margin-right:5px; margin-left:-10px;"/>Wired</a></h5>
+						 	<ul class="feedholder">
+						 	</ul>
+						</div>
+						<div class="span4 shadow feedcontainer" id="gizmodo">
+						 	<h5><a href="http://gizmodo.com/" target="_blank"><img src="images/gizmodo.png" style="width:18px; height:18px; margin-right:5px; margin-left:-10px;"/>Gizmodo</a></h5>
+						 	<ul class="feedholder">
+						 	</ul>
+						</div>
+						<div class="span4 shadow feedcontainer" id="engadget">
+						 	<h5><a href="http://www.engadget.com/" target="_blank"><img src="images/engadget.png" style="width:18px; height:18px; margin-right:5px; margin-left:-10px;"/>Engadget</a></h5>
+						 	<ul class="feedholder">
+						 	</ul>
+						</div>
+					</div>
+					<div id="footer"><a href="http://hackrdojo.com/" target="_blank">HackrDojo</a> | <a href="http://charlesdesouza.com/" target="_blank">Charles De Souza</a> | <a href="mailto:charles.desouza3000@gmail.com" target="_blank">Contact</a> </div>
 				</div>
 			</div>
 		</div>

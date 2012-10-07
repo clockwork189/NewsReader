@@ -4,6 +4,49 @@ body{
 	text-align: center;
 }
 
-.span3 {
-	background-color: #333;
+
+.shadow {
+  -moz-box-shadow:    2px 2px 5px #666;
+  -webkit-box-shadow: 2px 2px 5px #666;
+  box-shadow:         2px 2px 5px #666;
+}
+
+.feedholder {
+	font-size: 14px;
+	text-align: left;
+	padding: 10px;
+	height: 190px;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	list-style: circle;
+	font-family: 'Galdeano', sans-serif;
+}
+
+.feedholder li {
+	padding: 5px;
+}
+
+.feedholder li:hover {
+	background-color: #e0e0e0;
+}
+
+.feedholder li a:hover {
+	color: #484848;
+}
+ .feeditem {
+ 	color: black;	
+ 	margin-bottom: 10px;
+ }
+.feedcontainer {
+	background-color: #F0F0F0;
+	height:280px;
+}
+
+.feedcontainer:hover {
+	background-color: #F8F8F8;
+}
+
+#footer {
+	font-size: 10px;
+	margin-top: 20px;
 }
