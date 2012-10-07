@@ -5,12 +5,11 @@
 		<title>News Reader</title>
 		<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css" />
 		<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap-responsive.min.css" />
-		<link href='http://fonts.googleapis.com/css?family=Galdeano' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Galdeano' rel='stylesheet' type='text/css'/>
 		<link rel="stylesheet" type="text/css" href="css/main.css" />
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 		<script src="bootstrap/js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="https://www.google.com/jsapi"></script>
-		<script type="text/javascript" src="js/jquery.tinyscrollbar.min.js"></script>
 	</head>
 	<body>
 		<div class="container-fluid">
@@ -86,6 +85,7 @@
 		            		var entry = result.feed.entries[i];
 		            		var link_href = "<li><a href='" + entry.link + "' target='_blank' class='feeditem'>" + entry.title + "</a></li>";
 		            		$(div_id + " .feedholder").append(link_href);
+
 		          		}
 		        	}
 		    	});
@@ -99,6 +99,7 @@
 		    	for(var i in sites_object.identifier) {
 					GenerateFeed(sites_object.feeds[i], sites_object.identifier[i]);		    		
 		    	}
+
 				/*
 		    	GenerateFeed("http://feeds.feedburner.com/TechCrunch/","techcrunch");
 		    	GenerateFeed("http://news.ycombinator.com/rss","hackernews");
@@ -111,6 +112,7 @@
 		    	GenerateFeed("http://feeds.mashable.com/Mashable","mashable");
 		    	*/
 		    }
+
 		    google.setOnLoadCallback(initialize);
     </script>
 	</body>
