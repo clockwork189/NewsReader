@@ -1,0 +1,9 @@
+body{
+	background-image: url("../images/bg.png");
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+	text-align: center;
+}
+
+.span3 {
+	background-color: #333;
+}
