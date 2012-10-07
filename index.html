@@ -10,118 +10,7 @@
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 		<script src="bootstrap/js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="https://www.google.com/jsapi"></script>
-		<script type="text/javascript">
-		    google.load("feeds", "1");
-		    function initialize() {
-		      	var techcrunch = new google.feeds.Feed("http://feeds.feedburner.com/TechCrunch/");
-		      	techcrunch.setNumEntries(20);
-		      	techcrunch.load(function(result) {
-		        	if (!result.error) {
-		          		for (var i = 0; i < result.feed.entries.length; i++) {
-		            		var entry = result.feed.entries[i];
-		            		var link_href = "<li><a href='" + entry.link + "' target='_blank' class='feeditem'>" + entry.title + "</a></li>";
-		            		$("#techcrunch .feedholder").append(link_href);
-		          		}
-		        	}
-		      	});
-
-		      	var hackernews = new google.feeds.Feed("http://news.ycombinator.com/rss");
-		      	hackernews.setNumEntries(20);
-		      	hackernews.load(function(result) {
-		        	if (!result.error) {
-		          		for (var i = 0; i < result.feed.entries.length; i++) {
-		            		var entry = result.feed.entries[i];
-		            		var link_href = "<li><a href='" + entry.link + "' target='_blank' class='feeditem'>" + entry.title + "</a></li>";
-		            		$("#hackernews .feedholder").append(link_href);
-		          		}
-		        	}
-		      	});
-
-		      	var lifehacker = new google.feeds.Feed("http://feeds.gawker.com/lifehacker/full");
-		      	lifehacker.setNumEntries(20);
-		      	lifehacker.load(function(result) {
-		        	if (!result.error) {
-		          		for (var i = 0; i < result.feed.entries.length; i++) {
-		            		var entry = result.feed.entries[i];
-		            		var link_href = "<li><a href='" + entry.link + "' target='_blank' class='feeditem'>" + entry.title + "</a></li>";
-		            		$("#lifehacker .feedholder").append(link_href);
-		          		}
-		        	}
-		      	});
-		      	var gizmodo = new google.feeds.Feed("http://feeds.gawker.com/Gizmodo/full");
-		      	gizmodo.setNumEntries(20);
-		      	gizmodo.load(function(result) {
-		        	if (!result.error) {
-		          		for (var i = 0; i < result.feed.entries.length; i++) {
-		            		var entry = result.feed.entries[i];
-		            		var link_href = "<li><a href='" + entry.link + "' target='_blank' class='feeditem'>" + entry.title + "</a></li>";
-		            		$("#gizmodo .feedholder").append(link_href);
-		          		}
-		        	}
-		      	});
-
-		      	var wired = new google.feeds.Feed("http://feeds.wired.com/wired/index");
-		      	wired.setNumEntries(20);
-		      	wired.load(function(result) {
-		        	if (!result.error) {
-		          		for (var i = 0; i < result.feed.entries.length; i++) {
-		            		var entry = result.feed.entries[i];
-		            		var link_href = "<li><a href='" + entry.link + "' target='_blank' class='feeditem'>" + entry.title + "</a></li>";
-		            		$("#wired .feedholder").append(link_href);
-		          		}
-		        	}
-		      	});
-
-		      	var engadget = new google.feeds.Feed("http://www.engadget.com/rss.xml");
-		      	engadget.setNumEntries(20);
-		      	engadget.load(function(result) {
-		        	if (!result.error) {
-		          		for (var i = 0; i < result.feed.entries.length; i++) {
-		            		var entry = result.feed.entries[i];
-		            		var link_href = "<li><a href='" + entry.link + "' target='_blank' class='feeditem'>" + entry.title + "</a></li>";
-		            		$("#engadget .feedholder").append(link_href);
-		          		}
-		        	}
-		      	});
-
-		      	var arstechnica = new google.feeds.Feed("http://feeds.arstechnica.com/arstechnica/index");
-		      	arstechnica.setNumEntries(20);
-		      	arstechnica.load(function(result) {
-		        	if (!result.error) {
-		          		for (var i = 0; i < result.feed.entries.length; i++) {
-		            		var entry = result.feed.entries[i];
-		            		var link_href = "<li><a href='" + entry.link + "' target='_blank' class='feeditem'>" + entry.title + "</a></li>";
-		            		$("#arstechnica .feedholder").append(link_href);
-		          		}
-		        	}
-		      	});
-
-		      	var smashing = new google.feeds.Feed("http://rss1.smashingmagazine.com/feed/");
-		      	smashing.setNumEntries(20);
-		      	smashing.load(function(result) {
-		        	if (!result.error) {
-		          		for (var i = 0; i < result.feed.entries.length; i++) {
-		            		var entry = result.feed.entries[i];
-		            		var link_href = "<li><a href='" + entry.link + "' target='_blank' class='feeditem'>" + entry.title + "</a></li>";
-		            		$("#smashing .feedholder").append(link_href);
-		          		}
-		        	}
-		      	});
-
-		      	var mashable = new google.feeds.Feed("http://feeds.mashable.com/Mashable");
-		      	mashable.setNumEntries(20);
-		      	mashable.load(function(result) {
-		        	if (!result.error) {
-		          		for (var i = 0; i < result.feed.entries.length; i++) {
-		            		var entry = result.feed.entries[i];
-		            		var link_href = "<li><a href='" + entry.link + "' target='_blank' class='feeditem'>" + entry.title + "</a></li>";
-		            		$("#mashable .feedholder").append(link_href);
-		          		}
-		        	}
-		      	});
-		    }
-		    google.setOnLoadCallback(initialize);
-    </script>
+		<script type="text/javascript" src="js/jquery.tinyscrollbar.min.js"></script>
 	</head>
 	<body>
 		<div class="container-fluid">
@@ -183,5 +72,46 @@
 				</div>
 			</div>
 		</div>
+		<script type="text/javascript">
+		    google.load("feeds", "1");
+
+		    function GenerateFeed(feed_url, div_id) {
+		    	div_id = "#"+div_id;
+
+		    	var site = new google.feeds.Feed(feed_url);
+		      	site.setNumEntries(20);
+		      	site.load(function(result) {
+		        	if (!result.error) {
+		          		for (var i = 0; i < result.feed.entries.length; i++) {
+		            		var entry = result.feed.entries[i];
+		            		var link_href = "<li><a href='" + entry.link + "' target='_blank' class='feeditem'>" + entry.title + "</a></li>";
+		            		$(div_id + " .feedholder").append(link_href);
+		          		}
+		        	}
+		    	});
+		    }
+
+		    function initialize() {
+		    	var sites_object = {};
+		    	sites_object.identifier = new Array("techcrunch", "hackernews", "lifehacker", "gizmodo", "wired", "engadget", "arstechnica", "smashing", "mashable");
+		    	sites_object.feeds = new Array("http://feeds.feedburner.com/TechCrunch/", "http://news.ycombinator.com/rss", "http://feeds.gawker.com/lifehacker/full", "http://feeds.gawker.com/Gizmodo/full", "http://feeds.wired.com/wired/index", "http://www.engadget.com/rss.xml", "http://feeds.arstechnica.com/arstechnica/index", "http://rss1.smashingmagazine.com/feed/", "http://feeds.mashable.com/Mashable");
+
+		    	for(var i in sites_object.identifier) {
+					GenerateFeed(sites_object.feeds[i], sites_object.identifier[i]);		    		
+		    	}
+				/*
+		    	GenerateFeed("http://feeds.feedburner.com/TechCrunch/","techcrunch");
+		    	GenerateFeed("http://news.ycombinator.com/rss","hackernews");
+		    	GenerateFeed("http://feeds.gawker.com/lifehacker/full","lifehacker");
+		    	GenerateFeed("http://feeds.gawker.com/Gizmodo/full","gizmodo");
+		    	GenerateFeed("http://feeds.wired.com/wired/index","wired");
+		    	GenerateFeed("http://www.engadget.com/rss.xml","engadget");
+		    	GenerateFeed("http://feeds.arstechnica.com/arstechnica/index","arstechnica");
+		    	GenerateFeed("http://rss1.smashingmagazine.com/feed/","smashing");
+		    	GenerateFeed("http://feeds.mashable.com/Mashable","mashable");
+		    	*/
+		    }
+		    google.setOnLoadCallback(initialize);
+    </script>
 	</body>
 </html>
